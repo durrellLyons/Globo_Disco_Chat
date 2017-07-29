@@ -1,0 +1,40 @@
+header {
+    background-color: rgba(0,0,0, 0.75);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    &:after {
+        @include clearfix();
+        @include clearfix-after();
+    }
+    h3 {
+        color: $grey;
+        border-radius: 10px;
+        text-align: center;
+        float: left;
+        margin: 5px auto;
+        
+        @media screen and (min-width: $query__small) {
+            padding: 0 0.1em;
+            border: none;
+        }
+        
+        @media screen and (min-width: $query__medium) {
+            border: 2px groove;
+        }
+        
+        @media screen and (min-width: $query__large) {
+            padding: 0;
+            min-width: 8em;
+            max-width: 8em;
+            cursor: pointer;
+            padding: 0;
+        }
+        span.blue {
+            margin: 0 5px;
+            display: inline;
+            font-weight: bolder;
+        }
+    }
+}

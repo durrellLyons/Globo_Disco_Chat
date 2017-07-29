@@ -1,0 +1,114 @@
+.container {
+    @include center-block;
+}
+
+.column {
+    @include column;
+}
+
+ul {
+    list-style-type: none;
+}
+
+p { 
+    font-size: 16px; 
+    font-weight: 300; 
+    line-height: 1.5; 
+    margin: 0 0 1.5em;
+} 
+strong { 
+    font-weight: 700; 
+} 
+button, .button { 
+    border: 2px solid;
+    font-size: 1em;
+    font-weight: 400;
+    letter-spacing: .3em;
+    padding: 1em;
+    text-transform: uppercase;
+    border-radius: 1em;
+}
+
+span {
+	display: block;
+}
+
+.user_creds_div {
+	width: 30%;
+	margin: 7em auto;
+	text-align: center;
+	border: 1px solid;
+	padding: 1% 5%;
+	border-radius: 6px;
+	
+	h3 {
+		text-align: center;
+	}
+	
+	.input_div {
+		width: 100%;
+		margin: 1em auto;
+		
+		input {
+			width: 90%;
+			border: 1px solid;
+			border-radius: 6px;
+			padding: 2% 5%;
+		}
+		
+		button {
+			width: 100%;
+			padding: 0.5em;
+			border-radius: 6px;
+			margin: 0.5em auto;
+		}
+		
+		p {
+			width: 100%;
+			span {
+				color: $blue;
+				cursor: pointer;
+				display: inline;
+			}
+		}
+	}
+}
+
+.users_div {
+	width: 25%;
+	float: left;
+	border: 1px solid black;
+	min-height: 36.7em;
+}
+
+.message_div {
+	width: 70%;
+	float: left;
+	border: 1px solid black;
+	margin: 0 1%;
+	padding: 1%;
+	
+	.messageList_div {
+		border: 1px solid black;
+		min-height: 30em;
+		margin: 1em auto;
+		border-radius: 10px;
+	}
+	
+	.textarea_div {
+		width: 100%;
+		textarea {
+			width: 75%;
+			border: 1px solid;
+			border-radius: 5px;
+			height: 1em;
+			padding: 1em;
+			float: left;
+			margin-right: 0.25em;
+		}
+		
+		button {
+			float: right;
+		}
+	}
+}

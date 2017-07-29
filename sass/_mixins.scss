@@ -1,0 +1,65 @@
+/* Center block */
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1080px;
+	position: relative;
+	@media screen and (min-width: $query__small) {
+		width: 100%;
+	}
+	
+	@media screen and (min-width: $query__medium) {
+		width: 80%;
+	}
+	
+	@media screen and (min-width: $query__large) {
+		position: relative;
+	}
+	&:after {
+		content:'';
+		display:table;
+		clear: both;
+	}
+}
+
+/* Clearfix */
+@mixin clearfix() {
+	content: "";
+	display: table;
+	table-layout: fixed;
+}
+
+/* Clear after (not all clearfix need this also) */
+@mixin clearfix-after() {
+	clear: both;
+}
+
+/*  Column mixin */
+@mixin column {
+	float: left;
+	text-align: left;
+	@media screen and (min-width: $query__small) {
+		width: 90%;
+		padding: 5% 0 5% 10%;				
+	}
+	
+	@media screen and (min-width: $query__medium) {
+		width: 15em;
+		padding: 3em 0 0;
+		ul {
+			padding: 0;
+		}
+	}
+	
+	@media screen and (min-width: $query__large) {
+		width: 25%;
+	}
+}
+
+/*  Image Align Helper  */
+@mixin helper() {
+	display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+}
