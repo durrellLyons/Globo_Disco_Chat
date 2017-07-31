@@ -6,4 +6,7 @@
     var loginScreen = 'inc/login';
     var contentDiv = 'content';
     document.getElementById('content').onload = indexObject.loadView(loginScreen, contentDiv);
+    
+    indexObject.deleteCookie();
+    console.log(document.cookie);
 </script>

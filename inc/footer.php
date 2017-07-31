@@ -20,7 +20,7 @@
             var indexObject = new index();
             var users = new usersObject();
             users.prototype = new index();
-            var chatroom = new chatroomObject();
+            chatroom = new chatroomObject();
         </script>
     </body>
 </html>

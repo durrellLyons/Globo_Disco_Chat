@@ -313,19 +313,25 @@ span {
   padding: 1%; }
   .message_div .messageList_div {
     border: 1px solid black;
-    min-height: 30em;
+    height: 30em;
     margin: 1em auto;
     border-radius: 10px; }
+    .message_div .messageList_div div {
+      overflow-y: scroll;
+      height: 100%; }
+    .message_div .messageList_div span {
+      display: inline; }
   .message_div .textarea_div {
     width: 100%; }
     .message_div .textarea_div textarea {
-      width: 75%;
+      width: 77%;
       border: 1px solid;
       border-radius: 5px;
       height: 1em;
       padding: 1em;
       float: left;
-      margin-right: 0.25em; }
+      margin-right: 0.25em;
+      overflow: hidden; }
     .message_div .textarea_div button {
       float: right; }
 

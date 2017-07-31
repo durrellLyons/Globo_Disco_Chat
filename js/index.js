@@ -23,7 +23,8 @@ function index() {
     
     this.deleteCookie = function() {
         var availableCookie = decodeURIComponent(document.cookie);
-        document.cookie = availableCookie + ';expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+        document.cookie = availableCookie + ';expires=01 Jan 1970 00:00:01 GMT;expires=01 Jan 1970 00:00:01 GMT;';
+        console.log(availableCookie);
         
     }
 }

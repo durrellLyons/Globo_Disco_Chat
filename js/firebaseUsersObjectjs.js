@@ -49,6 +49,7 @@ function usersObject() {
         fireUsers.child(newRecordNumber).child('user').set(username);
         fireUsers.child(newRecordNumber).child('password').set(password);
         
+        this.prototype.deleteCookie();
         document.cookie = 'username='+username;
         this.prototype.loadView("chatroom", "content");
     }
@@ -78,6 +79,7 @@ function usersObject() {
             
             if(validateUser) {
                 alert('User Verified');
+                this.prototype.deleteCookie();
                 document.cookie = 'username='+username;
                 window.location = 'chatroom.php';
             } else {
