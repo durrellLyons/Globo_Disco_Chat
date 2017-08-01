@@ -209,6 +209,9 @@ ul {
 /*--------------------------------------------------------------
 # Core
 --------------------------------------------------------------*/
+body {
+  background-color: rgba(0, 0, 0, 0.75); }
+
 .container {
   display: block;
   margin-left: auto;
@@ -300,50 +303,75 @@ span {
         display: inline; }
 
 .users_div {
-  width: 25%;
+  width: 20%;
   float: left;
   border: 1px solid black;
-  min-height: 36.7em; }
+  height: 33em;
+  padding: 0.5em;
+  position: relative;
+  background-color: #d5d5d5;
+  border-radius: 0 0 6px 6px; }
+  .users_div .users_div_container {
+    height: 100%;
+    padding: 0.5em; }
+    .users_div .users_div_container ul li {
+      padding: 0.25em 0;
+      cursor: pointer; }
+      .users_div .users_div_container ul li:hover {
+        color: #06c1ff; }
 
 .message_div {
-  width: 70%;
-  float: left;
-  border: 1px solid black;
-  margin: 0 1%;
-  padding: 1%; }
+  width: 77%;
+  float: right;
+  margin: 0 0 0 1%;
+  height: 33.5em;
+  min-height: 33em;
+  border-radius: 0 0 6px 6px;
+  position: relative;
+  content: "";
+  display: table;
+  table-layout: fixed; }
   .message_div .messageList_div {
     border: 1px solid black;
-    height: 30em;
-    margin: 1em auto;
-    border-radius: 10px; }
+    height: 100%;
+    border-radius: 0 0 6px 6px;
+    background-color: #d5d5d5;
+    padding: 0.25em 0.5em;
+    position: absolute;
+    width: 100%; }
     .message_div .messageList_div div {
       overflow-y: scroll;
       height: 100%; }
     .message_div .messageList_div span {
       display: inline; }
-  .message_div .textarea_div {
-    width: 100%; }
-    .message_div .textarea_div textarea {
-      width: 77%;
-      border: 1px solid;
-      border-radius: 5px;
-      height: 1em;
-      padding: 1em;
-      float: left;
-      margin-right: 0.25em;
-      overflow: hidden; }
-    .message_div .textarea_div button {
-      float: right; }
+    .message_div .messageList_div p {
+      margin: 0.25em auto; }
+      .message_div .messageList_div p .username {
+        color: #06c1ff; }
+      .message_div .messageList_div p .message {
+        color: #0a395d; }
+
+.textarea_div {
+  width: 100%;
+  padding: 0.5em 0; }
+  .textarea_div textarea {
+    width: 85%;
+    border: 1px solid;
+    border-radius: 5px;
+    height: 1.75em;
+    padding: 0.75em;
+    float: left;
+    margin-right: 0.25em;
+    overflow: hidden; }
+  .textarea_div button {
+    float: right;
+    border-radius: 0.5em; }
 
 /*--------------------------------------------------------------
 # Heading
 --------------------------------------------------------------*/
 header {
-  background-color: rgba(0, 0, 0, 0.75);
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 10; }
+  width: 100%; }
   header:after {
     content: "";
     display: table;
@@ -373,6 +401,14 @@ header {
       margin: 0 5px;
       display: inline;
       font-weight: bolder; }
+  header h4 {
+    float: right; }
+    header h4 a {
+      color: #d5d5d5;
+      margin-left: 1em;
+      text-decoration: none; }
+      header h4 a:hover {
+        text-decoration: underline; }
 
 /*--------------------------------------------------------------
 # Footer

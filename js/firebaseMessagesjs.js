@@ -10,7 +10,6 @@ fireMessages.on('value', function(data){
         messageArray.push(childData.val())
     });
     chatroom.messageArray = messageArray;
-    console.log(chatroom.messageArray);
     document.getElementById('messageList_div').innerHTML = chatroom.chatroomMessages(chatroom.messageArray);
 });
 

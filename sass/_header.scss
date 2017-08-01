@@ -1,13 +1,10 @@
 header {
-    background-color: rgba(0,0,0, 0.75);
-    position: fixed;
-    top: 0;
     width: 100%;
-    z-index: 10;
     &:after {
         @include clearfix();
         @include clearfix-after();
     }
+    
     h3 {
         color: $grey;
         border-radius: 10px;
@@ -35,6 +32,18 @@ header {
             margin: 0 5px;
             display: inline;
             font-weight: bolder;
+        }
+    }
+    
+    h4 {
+        float: right;
+        a {
+            color: $grey;
+            margin-left: 1em;
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
 }

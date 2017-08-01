@@ -1,4 +1,4 @@
-/***  Firebase Chatroom  ***/
+/***  Firebase Chatroom Object ***/
 function chatroomObject() {
     this.usersArray = [];
     this.messageArray = [];
@@ -6,30 +6,38 @@ function chatroomObject() {
     this.currentUser;
     this.toUser;
     
+    this.displayUser = function() {
+        if(this.currentUser != '') {
+            document.getElementById('currentUser').innerHTML ='Welcome '+this.currentUser+'<a href="/Global_Disco_Chat">Sign Out</a>';
+        }
+    }
+    
     this.getUserList = function(usersArray) {
         var list = '<ul>';
         for( usersCounter=0; usersCounter < usersArray.length; usersCounter++) {
-            list += '<li onclick=" chatroom.updateCookie(\''+usersArray[usersCounter]+'\')">'+ usersArray[usersCounter] +'</li>';
+            list += '<li onclick=" chatroom.directChat(\''+usersArray[usersCounter]+'\')">'+ usersArray[usersCounter] +'</li>';
         }
         list += '</ul>';
         return list;
     }
     
+    this.directChat = function(name) {
+        var currentMessageText = document.getElementById('message').value;
+        message = '';
+        message += '@'+name+ ' ' +currentMessageText;
+        document.getElementById('message').value = message;
+    }
+    
     this.chatroomMessages = function(messageArray) {
-        var messages = '<div>';
+        var messages = '<div id="messageContainer">';
         for( messageCounter=0; messageCounter < messageArray.length; messageCounter++) {
             messages+='<p class="" id=' + messageArray[messageCounter]['mid'] + '>';
-            messages+='<span class="">' + messageArray[messageCounter]['messageSender'] + ': </span>';
-            messages+='<span class="">' + messageArray[messageCounter]['messageText'] + ' </span>';
+            messages+='<span class="username">' + messageArray[messageCounter]['messageSender'] + ': </span>';
+            messages+='<span class="message">' + messageArray[messageCounter]['messageText'] + ' </span>';
             messages+='</p>';
         }
         messages += '</div>';
         return messages;
-    }
-    
-    this.updateCookie = function(name) {
-        document.cookie='to='+name;
-        this.getCurrentCookies();
     }
     
     this.getCurrentCookies = function() {
@@ -40,30 +48,25 @@ function chatroomObject() {
         this.currentUser = currentUserCookie.slice(9);
         cookieArray[0] = this.currentUser;
         
-        
-        if(currentCookies.length > 1) {
-            var toUserCookie = currentCookies[1];
-            this.toUser = toUserCookie.slice(4);
-            cookieArray[1] = this.toUser;
-        }
         return cookieArray;
     }
     
     this.sendMessage = function() {
-        console.log(this.getCurrentCookies());
         var message = document.getElementById('message').value;
         var messageId = this.messageCount+1;
-        
-        console.log('To User: '+this.toUser);
-        console.log('This User: '+this.currentUser);
-        console.log('Message: '+message);
-        console.log(this.messageCount);
-        console.log(messageId);
         
         fireMessages.child(messageId);
         fireMessages.child(messageId).child('mid').set(messageId);
         fireMessages.child(messageId).child('messageSender').set(this.currentUser);
         fireMessages.child(messageId).child('messageText').set(message);
+        
+        document.getElementById('message').value = '';
+        this.scrollView();
+    }
+    
+    this.scrollView = function() {
+        var div = document.getElementById('messageContainer');
+        div.scrollTop = div.scrollHeight - div.clientHeight;
     }
 }
 
