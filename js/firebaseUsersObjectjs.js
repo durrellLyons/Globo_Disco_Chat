@@ -1,5 +1,4 @@
 function usersObject() {
-    this.amountOfRecords;
     this.objectArray = [];
     
     this.addUser = function () {
@@ -30,28 +29,17 @@ function usersObject() {
         }
     }
     
-    this.createRecordNumber = function() {
-        var highestNumber = 0;
-        for(var objectCounter=0; objectCounter < this.objectArray.length; objectCounter++) {
-            if(highestNumber < this.objectArray[objectCounter]['id']) {
-                highestNumber = this.objectArray[objectCounter]['id'];
-            }
-        }
-        var recordNumber = highestNumber+1;
-        return recordNumber;
-    }
-    
     this.addUserRecord = function (username, password) {
-        var newRecordNumber = this.createRecordNumber();
+        var newUserKey = fireUsers.push().key;
         
-        fireUsers.child(newRecordNumber);
-        fireUsers.child(newRecordNumber).child('id').set(newRecordNumber);
-        fireUsers.child(newRecordNumber).child('user').set(username);
-        fireUsers.child(newRecordNumber).child('password').set(password);
+        fireUsers.child(newUserKey);
+        fireUsers.child(newUserKey).child('id').set(newUserKey);
+        fireUsers.child(newUserKey).child('user').set(username);
+        fireUsers.child(newUserKey).child('password').set(password);
         
         this.prototype.deleteCookie();
         document.cookie = 'username='+username;
-        this.prototype.loadView("chatroom", "content");
+        window.location = 'chatroom.php';
     }
     
     this.signInUser = function() {
@@ -69,22 +57,50 @@ function usersObject() {
              * matches a username and password pair of one of the User objects
              ***/
             var validateUser;
-            for(var objectCounter=0; objectCounter < this.amountOfRecords; objectCounter++) {
+            var userID;
+            var updateObject;
+            for(var objectCounter=0; objectCounter < this.objectArray.length; objectCounter++) {
                 if(username == this.objectArray[objectCounter]['user']) {
                     if(password == this.objectArray[objectCounter]['password']){
                         validateUser = true;
+                        userID = this.objectArray[objectCounter]['id']
                     }
                 }
             }
             
+            updateObject = {
+                id: userID,
+                user: username,
+                password: password,
+                loggedin: true
+            }
+            
             if(validateUser) {
-                alert('User Verified');
                 this.prototype.deleteCookie();
                 document.cookie = 'username='+username;
+                fireUsers.child(userID).set(updateObject);
                 window.location = 'chatroom.php';
             } else {
                 alert('Either Username or Password is Incorrect');
             }
         }
+    }
+    
+    this.signOut = function(username) {
+        for(var objectCounter=0; objectCounter < this.objectArray.length; objectCounter++) {
+            if(username == this.objectArray[objectCounter]['user']) {
+                var userid = this.objectArray[objectCounter]['id'];
+                var password = this.objectArray[objectCounter]['password'];
+            }
+        }
+        var updateUserObject = {};
+        updateObject = {
+            id: userid,
+            user: username,
+            password: password,
+        }
+        fireUsers.child(userid).set(updateObject);
+        this.prototype.deleteCookie();
+        window.location = 'index.php';
     }
 }

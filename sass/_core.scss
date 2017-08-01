@@ -82,21 +82,36 @@ span {
 	width: 20%;
 	float: left;
 	border: 1px solid black;
-	height: 33em;
+	height: 28em;
 	padding: 0.5em;
 	position: relative;
 	background-color: $grey;
 	border-radius: 0 0 6px 6px;
+	&:after {
+		@include clearfix();
+		@include clearfix-after();
+	}
 	
 	.users_div_container {
 		height: 100%;
 		padding: 0.5em;
 		
-		ul li {
-			padding: 0.25em 0;
-			cursor: pointer;
-			&:hover {
-				color: $blue;
+		ul {
+			margin: 0;
+			padding: 0;
+			li {
+				padding: 0.25em 0;
+				cursor: pointer;
+				&:hover {
+					color: $blue;
+				}
+				i {
+					font-size: 1em;
+					margin-left: 0.5em;
+					margin-top: 5px;
+					color: $darkblue;
+	
+				}
 			}
 		}
 	}
@@ -106,37 +121,66 @@ span {
 	width: 77%;
 	float: right;
 	margin: 0 0 0 1%;
-	height: 33.5em;
-	min-height: 33em;
+	height: 28.5em;
 	border-radius: 0 0 6px 6px;
 	position: relative;
-	@include clearfix();
+	&:after {
+		@include clearfix();
+		@include clearfix-after();
+	}
 	
 	.messageList_div {
 		border: 1px solid black;
 		height: 100%;
 		border-radius: 0 0 6px 6px;
 		background-color: $grey;
-		padding: 0.25em 0.5em;
 		position: absolute;
 		width: 100%;
+		padding: 0.25em 0;
 
 		div {
 			overflow-y: scroll;
 			height: 100%;
+			width: 100%;
+			&:nth-child(even) {
+				background-color: $darkgrey;
+			}
 		}
 		span {
 			display: inline;
 		}
 		
 		p {
-			margin: 0.25em auto;
+			margin: 0.15em auto;
+			padding: 0.25em;
 			.username {
 				color: $blue;
 			}
 			
 			.message {
 				color: $darkblue;
+			}
+			i {
+				font-size: 1em;
+				float: right;
+				position: relative;
+				right: 1em;
+				display: none;
+				cursor: pointer;
+				margin: 0 5px 0 2px;
+				&:hover {
+					color: $blue;
+				}
+			}
+			&:hover {
+				background-color: #828282;
+				i {
+					display: inline;
+				}
+			}
+			
+			input {
+				width: 80%;
 			}
 		}
 	}
@@ -145,13 +189,13 @@ span {
 .textarea_div {
 	width: 100%;
 	padding: 0.5em 0;
+	clear: both;
 	textarea {
 		width: 85%;
 		border: 1px solid;
 		border-radius: 5px;
 		height: 1.75em;
 		padding: 0.75em;
-		float: left;
 		margin-right: 0.25em;
 		overflow: hidden;
 	}

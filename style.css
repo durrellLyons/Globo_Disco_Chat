@@ -8,7 +8,9 @@ html {
   -ms-text-size-adjust: 100%; }
 
 body {
-  margin: 0; }
+  margin: 0;
+  position: relative;
+  height: 100vh; }
 
 article,
 aside,
@@ -306,61 +308,95 @@ span {
   width: 20%;
   float: left;
   border: 1px solid black;
-  height: 33em;
+  height: 28em;
   padding: 0.5em;
   position: relative;
   background-color: #d5d5d5;
   border-radius: 0 0 6px 6px; }
+  .users_div:after {
+    content: "";
+    display: table;
+    table-layout: fixed;
+    clear: both; }
   .users_div .users_div_container {
     height: 100%;
     padding: 0.5em; }
-    .users_div .users_div_container ul li {
-      padding: 0.25em 0;
-      cursor: pointer; }
-      .users_div .users_div_container ul li:hover {
-        color: #06c1ff; }
+    .users_div .users_div_container ul {
+      margin: 0;
+      padding: 0; }
+      .users_div .users_div_container ul li {
+        padding: 0.25em 0;
+        cursor: pointer; }
+        .users_div .users_div_container ul li:hover {
+          color: #06c1ff; }
+        .users_div .users_div_container ul li i {
+          font-size: 1em;
+          margin-left: 0.5em;
+          margin-top: 5px;
+          color: #0a395d; }
 
 .message_div {
   width: 77%;
   float: right;
   margin: 0 0 0 1%;
-  height: 33.5em;
-  min-height: 33em;
+  height: 28.5em;
   border-radius: 0 0 6px 6px;
-  position: relative;
-  content: "";
-  display: table;
-  table-layout: fixed; }
+  position: relative; }
+  .message_div:after {
+    content: "";
+    display: table;
+    table-layout: fixed;
+    clear: both; }
   .message_div .messageList_div {
     border: 1px solid black;
     height: 100%;
     border-radius: 0 0 6px 6px;
     background-color: #d5d5d5;
-    padding: 0.25em 0.5em;
     position: absolute;
-    width: 100%; }
+    width: 100%;
+    padding: 0.25em 0; }
     .message_div .messageList_div div {
       overflow-y: scroll;
-      height: 100%; }
+      height: 100%;
+      width: 100%; }
+      .message_div .messageList_div div:nth-child(even) {
+        background-color: #828282; }
     .message_div .messageList_div span {
       display: inline; }
     .message_div .messageList_div p {
-      margin: 0.25em auto; }
+      margin: 0.15em auto;
+      padding: 0.25em; }
       .message_div .messageList_div p .username {
         color: #06c1ff; }
       .message_div .messageList_div p .message {
         color: #0a395d; }
+      .message_div .messageList_div p i {
+        font-size: 1em;
+        float: right;
+        position: relative;
+        right: 1em;
+        display: none;
+        cursor: pointer;
+        margin: 0 5px 0 2px; }
+        .message_div .messageList_div p i:hover {
+          color: #06c1ff; }
+      .message_div .messageList_div p:hover {
+        background-color: #828282; }
+        .message_div .messageList_div p:hover i {
+          display: inline; }
+      .message_div .messageList_div p input {
+        width: 80%; }
 
 .textarea_div {
   width: 100%;
-  padding: 0.5em 0; }
+  padding: 0.5em 0;
+  clear: both; }
   .textarea_div textarea {
     width: 85%;
     border: 1px solid;
     border-radius: 5px;
     height: 1.75em;
     padding: 0.75em;
-    float: left;
     margin-right: 0.25em;
     overflow: hidden; }
   .textarea_div button {
@@ -415,7 +451,9 @@ header {
 --------------------------------------------------------------*/
 footer {
   background-color: #d5d5d5;
-  width: 100%; }
+  width: 100%;
+  position: absolute;
+  bottom: 0; }
   footer p {
     text-align: center;
     font-size: 0.65em;

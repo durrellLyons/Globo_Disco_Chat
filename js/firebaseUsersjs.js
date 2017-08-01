@@ -6,17 +6,16 @@ var cookieArray = chatroom.getCurrentCookies();
 
 
 fireUsers.on('value', function(data){
-    users.amountOfRecords = data.numChildren();
     var objectArray = [];
     var usersArray = [];
-    
+
     //store each object in the object array
     //store users in users array
     data.forEach(function(childData){
         objectArray.push(childData.val());
         var username = childData.val()['user'];
         if(cookieArray[0] !== username){
-            usersArray.push(childData.val()['user']);
+            usersArray.push(childData.val());
         }
     });
     users.objectArray = objectArray;
