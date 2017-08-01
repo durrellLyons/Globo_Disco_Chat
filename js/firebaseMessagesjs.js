@@ -11,6 +11,7 @@ fireMessages.on('value', function(data){
     });
     chatroom.messageArray = messageArray;
     document.getElementById('messageList_div').innerHTML = chatroom.chatroomMessages(chatroom.messageArray);
+    chatroom.scrollView();
 });
 
 fireMessages.on('child_added', function(data) {
