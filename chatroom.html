@@ -1,0 +1,78 @@
+<!Doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel='stylesheet' href='style.css' />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class='container'>
+                <h3 id='logo'></h3>
+                
+                <h4 id='currentUser'></h4>
+            </div><!-- .container -->
+        </header>
+        <section class='chatroom'>
+            <div class='container'>
+                
+                <div class='users_div' id='users_div'>
+                    <span id='mobile_button' class='mobile_button' onclick='chatroom.showMobileUsers();'>
+                        <i class='material-icons' >menu</i>
+                    </span>
+                    <div id='users_div_container' class='users_div_container'></div>
+                </div><!-- .users_div -->
+                
+                <div class='message_div'>
+                    <div class='messageList_div' id='messageList_div'></div><!-- .messageList_div -->
+                </div><!-- .message_div -->
+                <div class='textarea_div'>
+                    <textarea placeholder='Type Message Here' id='message'></textarea>
+                    <button onclick='chatroom.sendMessage()'>SEND</button>
+                </div><!-- .textarea_div -->
+            </div>
+        </section>
+        <footer>
+            <div class='continaer'>
+                <p>Global Disco Chatroom - Developed By Durrell Lyons</p>
+            </div>
+        </footer>
+        <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+        <script>
+            
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyAP7VW0GMwPEMAnTzshoPFSTWuvelqNnmw",
+                authDomain: "globaldiscochatroom091785.firebaseapp.com",
+                databaseURL: "https://globaldiscochatroom091785.firebaseio.com",
+                projectId: "globaldiscochatroom091785",
+                storageBucket: "",
+                messagingSenderId: "648156978093"
+            };
+            firebase.initializeApp(config);
+        </script>
+        <script src="js/firebaseUsersObjectjs.js"></script>
+        <script src="js/firebaseChatroomjs.js"></script>
+        <script src="js/firebaseUsersjs.js"></script>
+        <script src="js/index.js"></script>
+        <script src="js/firebaseMessagesjs.js"></script>
+        <script type='text/javascript'>
+            var indexObject = new index();
+            var users = new usersObject();
+            users.prototype = new index();
+            var chatroom = new chatroomObject();
+            chatroom.prototype = new usersObject();
+            chatroom.getCurrentCookies();
+            chatroom.displayUser();
+            window.onbeforeunload = function(){
+                var check = confirm("Are You Sure You Want To Leave");
+                return check;
+            }
+        </script>
+    </body>
+</html>
+
+<script type='text/javascript'>
+
+</script>

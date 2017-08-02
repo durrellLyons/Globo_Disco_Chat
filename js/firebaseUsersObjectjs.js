@@ -51,7 +51,7 @@ function usersObject() {
         
         this.prototype.deleteCookie();
         document.cookie = 'username='+username;
-        window.location = 'chatroom.php';
+        window.location = 'chatroom.html';
     }
     
     this.signInUser = function() {
@@ -99,7 +99,7 @@ function usersObject() {
                     this.prototype.deleteCookie();
                     document.cookie = 'username='+username;
                     fireUsers.child(userID).set(updateObject);
-                    window.location = 'chatroom.php';
+                    window.location = 'chatroom.html';
                 } else {
                     alert('Either Username or Password is Incorrect');
                 }
@@ -123,7 +123,7 @@ function usersObject() {
         }
         fireUsers.child(userid).set(updateObject);
         this.prototype.deleteCookie();
-        window.location = 'index.php';
+        window.location = 'index.html';
     }
     
     this.validation = function(fieldValue) {

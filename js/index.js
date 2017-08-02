@@ -17,7 +17,7 @@ function index() {
                 document.getElementById(div).innerHTML=xmlhttp.responseText;
             }
         }
-        xmlhttp.open("GET",file+".php",true);
+        xmlhttp.open("GET",file+".html",true);
         xmlhttp.send();    
     }
     
