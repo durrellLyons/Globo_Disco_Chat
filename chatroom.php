@@ -17,6 +17,16 @@
 <script src="js/firebaseMessagesjs.js"></script>
 <script type='text/javascript'>
     var chatroom = new chatroomObject();
+    chatroom.prototype = new usersObject();
     chatroom.getCurrentCookies();
     chatroom.displayUser();
+    window.onbeforeunload = function(){
+        return "Are you sure you want to close the window?";
+    }
+    /*
+    window.onbeforeload = function() {
+        alert('text');
+        //chatroom.prototype.signOut(chatroom.currentUser);
+    }
+    */
 </script>

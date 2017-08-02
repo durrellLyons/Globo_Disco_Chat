@@ -61,16 +61,21 @@ function chatroomObject() {
     
     this.sendMessage = function() {
         var message = document.getElementById('message').value;
-        var newMessageKey = fireMessages.push().key;
-        console.log(newMessageKey);
-        
-        //fireMessages.child(newMessageKey);
-        fireMessages.child(newMessageKey).child('mid').set(newMessageKey);
-        fireMessages.child(newMessageKey).child('messageSender').set(this.currentUser);
-        fireMessages.child(newMessageKey).child('messageText').set(message);
-        
-        document.getElementById('message').value = '';
-        this.scrollView();
+        var messageValidation = this.prototype.validation(message)
+        if(!messageValidation) {
+            alert('Message box cannot be blank');
+            return false;
+        } else {
+            var newMessageKey = fireMessages.push().key;
+            fireMessages.child(newMessageKey).child('mid').set(newMessageKey);
+            fireMessages.child(newMessageKey).child('messageSender').set(this.currentUser);
+            fireMessages.child(newMessageKey).child('messageText').set(message);
+            
+            document.getElementById('message').value = '';
+            this.scrollView();
+
+            return true;
+        }
     }
     
     this.scrollView = function() {

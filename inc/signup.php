@@ -2,12 +2,12 @@
     <h2>Create Your Account</h2>
     <div class='input_div'>
         <label for='username'>Username</label> <br>
-        <input type='text' id='username' name='username' />
+        <input type='text' id='username' name='username' /><em id='username_validation'></em>
     </div><!-- .input_div -->
 
     <div class='input_div'>
         <label for='password'>Password</label> <br>
-        <input type='password' id='password' name='password' />
+        <input type='password' id='password' name='password' /><em id='username_validation'></em>
     </div><!-- .input_div -->
     
     <div class='input_div'>

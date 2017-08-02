@@ -332,8 +332,9 @@ span {
         .users_div .users_div_container ul li i {
           font-size: 1em;
           margin-left: 0.5em;
-          margin-top: 5px;
-          color: #0a395d; }
+          color: #0a395d;
+          position: relative;
+          top: 3px; }
 
 .message_div {
   width: 77%;
