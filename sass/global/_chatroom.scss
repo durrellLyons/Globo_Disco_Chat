@@ -1,0 +1,200 @@
+.users_div {
+	position: relative;
+	background-color: $grey;
+	border-radius: 0 0 6px 6px;
+	&:after {
+		@include clearfix();
+		@include clearfix-after();
+	}
+	@media screen and (min-width: $query__small) {
+		width: 95%;
+		padding: 1.5%;
+		height: auto;
+		margin: 0 auto;
+	}
+	
+	@media screen and (min-width: $query__large) {
+		width: 20%;
+		height: 28em;
+		float: left;
+		padding: 0.5em;
+		border: 1px solid black;
+		.mobile_button {
+			display: none;
+		}
+	}
+	
+	.users_div_container {
+		height: 100%;
+		padding: 0.5em;
+		
+		ul {
+			margin: 0;
+			padding: 0;
+			li {
+				padding: 0.25em 0;
+				cursor: pointer;
+				&:hover {
+					color: $blue;
+				}
+				i {
+					font-size: 1em;
+					margin-left: 0.5em;
+					color: $darkblue;
+					position: relative;
+					top: 3px;
+				}
+			}
+		}
+		@media screen and (min-width: $query__small) {
+			display: none;
+		}
+		
+		@media screen and (min-width: $query__large) {
+			display: block;
+		}
+	}
+}
+
+.message_div {
+
+	border-radius: 0 0 6px 6px;
+	position: relative;
+	&:after {
+		@include clearfix();
+		@include clearfix-after();
+	}
+	
+	.messageList_div {
+		border: 1px solid black;
+		height: 100%;
+		border-radius: 0 0 6px 6px;
+		background-color: $grey;
+		position: absolute;
+		width: 100%;
+		padding: 0.25em 0;
+
+		div {
+			overflow-y: scroll;
+			height: 100%;
+			width: 100%;
+		}
+		span {
+			@media screen and (min-width: $query__small) {
+				display: block;
+				text-align: center;
+			}
+			@media screen and (min-width: $query__large) {
+				display: inline;
+			}
+		}
+		
+		p {
+			margin: 0.15em auto;
+			.username {
+				color: $blue;
+			}
+			
+			.message {
+				color: $darkblue;
+			}
+			
+			i {
+				font-size: 1em;
+				display: none;
+				cursor: pointer;
+				margin: 0 5px 0 2px;
+				&:hover {
+					color: $blue;
+				}
+				@media screen and (min-width: $query__small) {
+					float: none;
+				}
+				
+				@media screen and (min-width: $query__large) {
+					position: relative;
+					right: 1em;
+					float: right;
+				}
+			}
+			&:hover {
+				background-color: #828282;
+				i {
+					display: inline;
+				}
+			}
+			
+			input {
+				width: 80%;
+			}
+			
+			@media screen and (min-width: $query__small){
+				padding: 0 0 1em;
+			}
+			
+			@media screen and (min-width: $query__large) {
+				padding: 0.25em 0;
+			}
+		}
+	}
+	
+	@media screen and (min-width: $query__small) {
+		width: 95%;
+		padding: 1% 0;
+		margin: 0 auto;
+		border: none;
+		height: 20em;
+	}
+	
+	@media screen and (min-width: $query__large) {
+		width: 77%;
+		margin: 0 0 0 1%;
+		float: right;
+		height: 28.5em;
+		padding: 0;
+	}
+}
+
+.textarea_div {
+	clear: both;
+	textarea {
+		border: 1px solid;
+		border-radius: 5px;
+		overflow: hidden;
+		@media screen and (min-width: $query__small) {
+			width: 95%;
+			height: 3em;
+			padding: 2.5%;
+		}
+		
+		@media screen and (min-width: $query__large) {
+			width: 85%;
+			padding: 0.75em;
+			margin-right: 0.25em;
+			height: 1.75em;
+		}
+	}
+	
+	button {
+		float: right;
+		border-radius: 0.5em;
+		@media screen and (min-width: $query__small) {
+			width: 100%;
+		}
+		
+		@media screen and (min-width: $query__large) {
+			width: 10%;
+		}
+	}
+	
+	@media screen and (min-width: $query__small) {
+		width: 95%;
+		padding: 1.5%;
+		margin: 1em auto;
+	}
+	
+	@media screen and (min-width: $query__large) {
+		width: 100%;
+		padding: 0.5em 0;
+	}
+}

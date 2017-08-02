@@ -1,11 +1,18 @@
 footer {
     background-color: $grey;
     width: 100%;
-    position: absolute;
-    bottom: 0;
     p {
         text-align: center;
         font-size: 0.65em;
         width: 100%;
+    }
+    @media screen and (min-width: $query__small) {
+        position: absolute;
+        margin: 1em auto 0;
+    }
+    
+    @media screen and (min-width: $query__large) {
+        position: absolute;
+        bottom: 0;
     }
 }

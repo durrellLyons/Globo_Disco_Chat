@@ -223,10 +223,10 @@ body {
   @media screen and (min-width: 300px) {
     .container {
       width: 100%; } }
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 700px) {
     .container {
       width: 80%; } }
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 1100px) {
     .container {
       position: relative; } }
   .container:after {
@@ -241,13 +241,13 @@ body {
     .column {
       width: 90%;
       padding: 5% 0 5% 10%; } }
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 700px) {
     .column {
       width: 15em;
       padding: 3em 0 0; }
       .column ul {
         padding: 0; } }
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 1100px) {
     .column {
       width: 25%; } }
 
@@ -275,15 +275,81 @@ button, .button {
 span {
   display: block; }
 
+/*--------------------------------------------------------------
+# Heading
+--------------------------------------------------------------*/
+header {
+  width: 100%; }
+  header:after {
+    content: "";
+    display: table;
+    table-layout: fixed;
+    clear: both; }
+  header h3 {
+    color: #d5d5d5;
+    border-radius: 5px;
+    text-align: center;
+    float: left;
+    margin: 5px auto;
+    padding: 0.5em; }
+    @media screen and (min-width: 300px) {
+      header h3 {
+        padding: 0 0.1em;
+        width: 50%; } }
+    @media screen and (min-width: 700px) {
+      header h3 {
+        padding: 0.5em; } }
+    @media screen and (min-width: 1100px) {
+      header h3 {
+        padding: 1em 0.5em;
+        width: 20%; } }
+  header h4 {
+    float: right;
+    text-align: center;
+    margin-right: 1em; }
+    header h4 a {
+      color: #d5d5d5;
+      text-decoration: none;
+      width: 100%; }
+      header h4 a:hover {
+        text-decoration: underline; }
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+footer {
+  background-color: #d5d5d5;
+  width: 100%; }
+  footer p {
+    text-align: center;
+    font-size: 0.65em;
+    width: 100%; }
+  @media screen and (min-width: 300px) {
+    footer {
+      position: absolute;
+      margin: 1em auto 0; } }
+  @media screen and (min-width: 1100px) {
+    footer {
+      position: absolute;
+      bottom: 0; } }
+
+/*--------------------------------------------------------------
+# Global
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Login
+--------------------------------------------------------------*/
 .user_creds_div {
-  width: 30%;
-  margin: 7em auto;
   text-align: center;
-  border: 1px solid;
   padding: 1% 5%;
   border-radius: 6px; }
-  .user_creds_div h3 {
+  .user_creds_div h2, .user_creds_div h3 {
     text-align: center; }
+  .user_creds_div h2 {
+    color: #d5d5d5;
+    border: 3px groove #d5d5d5;
+    padding: 0.5em;
+    border-radius: 5px; }
   .user_creds_div .input_div {
     width: 100%;
     margin: 1em auto; }
@@ -303,13 +369,19 @@ span {
         color: #06c1ff;
         cursor: pointer;
         display: inline; }
+  @media screen and (min-width: 300px) {
+    .user_creds_div {
+      width: 95%;
+      padding: 2.5%; } }
+  @media screen and (min-width: 1100px) {
+    .user_creds_div {
+      width: 30%;
+      margin: 7em auto; } }
 
+/*--------------------------------------------------------------
+# Chatroom
+--------------------------------------------------------------*/
 .users_div {
-  width: 20%;
-  float: left;
-  border: 1px solid black;
-  height: 28em;
-  padding: 0.5em;
   position: relative;
   background-color: #d5d5d5;
   border-radius: 0 0 6px 6px; }
@@ -318,6 +390,21 @@ span {
     display: table;
     table-layout: fixed;
     clear: both; }
+  @media screen and (min-width: 300px) {
+    .users_div {
+      width: 95%;
+      padding: 1.5%;
+      height: auto;
+      margin: 0 auto; } }
+  @media screen and (min-width: 1100px) {
+    .users_div {
+      width: 20%;
+      height: 28em;
+      float: left;
+      padding: 0.5em;
+      border: 1px solid black; }
+      .users_div .mobile_button {
+        display: none; } }
   .users_div .users_div_container {
     height: 100%;
     padding: 0.5em; }
@@ -335,12 +422,14 @@ span {
           color: #0a395d;
           position: relative;
           top: 3px; }
+    @media screen and (min-width: 300px) {
+      .users_div .users_div_container {
+        display: none; } }
+    @media screen and (min-width: 1100px) {
+      .users_div .users_div_container {
+        display: block; } }
 
 .message_div {
-  width: 77%;
-  float: right;
-  margin: 0 0 0 1%;
-  height: 28.5em;
   border-radius: 0 0 6px 6px;
   position: relative; }
   .message_div:after {
@@ -360,104 +449,95 @@ span {
       overflow-y: scroll;
       height: 100%;
       width: 100%; }
-      .message_div .messageList_div div:nth-child(even) {
-        background-color: #828282; }
-    .message_div .messageList_div span {
-      display: inline; }
+    @media screen and (min-width: 300px) {
+      .message_div .messageList_div span {
+        display: block;
+        text-align: center; } }
+    @media screen and (min-width: 1100px) {
+      .message_div .messageList_div span {
+        display: inline; } }
     .message_div .messageList_div p {
-      margin: 0.15em auto;
-      padding: 0.25em; }
+      margin: 0.15em auto; }
       .message_div .messageList_div p .username {
         color: #06c1ff; }
       .message_div .messageList_div p .message {
         color: #0a395d; }
       .message_div .messageList_div p i {
         font-size: 1em;
-        float: right;
-        position: relative;
-        right: 1em;
         display: none;
         cursor: pointer;
         margin: 0 5px 0 2px; }
         .message_div .messageList_div p i:hover {
           color: #06c1ff; }
+        @media screen and (min-width: 300px) {
+          .message_div .messageList_div p i {
+            float: none; } }
+        @media screen and (min-width: 1100px) {
+          .message_div .messageList_div p i {
+            position: relative;
+            right: 1em;
+            float: right; } }
       .message_div .messageList_div p:hover {
         background-color: #828282; }
         .message_div .messageList_div p:hover i {
           display: inline; }
       .message_div .messageList_div p input {
         width: 80%; }
+      @media screen and (min-width: 300px) {
+        .message_div .messageList_div p {
+          padding: 0 0 1em; } }
+      @media screen and (min-width: 1100px) {
+        .message_div .messageList_div p {
+          padding: 0.25em 0; } }
+  @media screen and (min-width: 300px) {
+    .message_div {
+      width: 95%;
+      padding: 1% 0;
+      margin: 0 auto;
+      border: none;
+      height: 20em; } }
+  @media screen and (min-width: 1100px) {
+    .message_div {
+      width: 77%;
+      margin: 0 0 0 1%;
+      float: right;
+      height: 28.5em;
+      padding: 0; } }
 
 .textarea_div {
-  width: 100%;
-  padding: 0.5em 0;
   clear: both; }
   .textarea_div textarea {
-    width: 85%;
     border: 1px solid;
     border-radius: 5px;
-    height: 1.75em;
-    padding: 0.75em;
-    margin-right: 0.25em;
     overflow: hidden; }
+    @media screen and (min-width: 300px) {
+      .textarea_div textarea {
+        width: 95%;
+        height: 3em;
+        padding: 2.5%; } }
+    @media screen and (min-width: 1100px) {
+      .textarea_div textarea {
+        width: 85%;
+        padding: 0.75em;
+        margin-right: 0.25em;
+        height: 1.75em; } }
   .textarea_div button {
     float: right;
     border-radius: 0.5em; }
-
-/*--------------------------------------------------------------
-# Heading
---------------------------------------------------------------*/
-header {
-  width: 100%; }
-  header:after {
-    content: "";
-    display: table;
-    table-layout: fixed;
-    clear: both; }
-  header h3 {
-    color: #d5d5d5;
-    border-radius: 10px;
-    text-align: center;
-    float: left;
-    margin: 5px auto; }
     @media screen and (min-width: 300px) {
-      header h3 {
-        padding: 0 0.1em;
-        border: none; } }
-    @media screen and (min-width: 600px) {
-      header h3 {
-        border: 2px groove; } }
-    @media screen and (min-width: 900px) {
-      header h3 {
-        padding: 0;
-        min-width: 8em;
-        max-width: 8em;
-        cursor: pointer;
-        padding: 0; } }
-    header h3 span.blue {
-      margin: 0 5px;
-      display: inline;
-      font-weight: bolder; }
-  header h4 {
-    float: right; }
-    header h4 a {
-      color: #d5d5d5;
-      margin-left: 1em;
-      text-decoration: none; }
-      header h4 a:hover {
-        text-decoration: underline; }
-
-/*--------------------------------------------------------------
-# Footer
---------------------------------------------------------------*/
-footer {
-  background-color: #d5d5d5;
-  width: 100%;
-  position: absolute;
-  bottom: 0; }
-  footer p {
-    text-align: center;
-    font-size: 0.65em;
-    width: 100%; }
+      .textarea_div button {
+        width: 100%; } }
+    @media screen and (min-width: 1100px) {
+      .textarea_div button {
+        width: 10%; } }
+  @media screen and (min-width: 300px) {
+    .textarea_div {
+      width: 95%;
+      padding: 1.5%;
+      margin: 1em auto; } }
+  @media screen and (min-width: 1100px) {
+    .textarea_div {
+      width: 100%;
+      padding: 0.5em 0; } }
 
 /*# sourceMappingURL=style.css.map */

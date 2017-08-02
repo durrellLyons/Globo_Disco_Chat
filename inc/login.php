@@ -1,5 +1,6 @@
 <section class='user_creds_div'>
-    <h2>Sign In</h2>
+    <h2>Global Disco Chatroom</h2>
+    <h3>Sign In</h3>
     <div class='input_div'>
         <label for='username'>Username</label> <br>
         <input type='text' id='username' name='username' /><em id='username_validation'></em>

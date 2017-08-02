@@ -1,9 +1,14 @@
 <?php include('inc/header.php'); ?>
 <section class='chatroom'>
     <div class='container'>
+        
         <div class='users_div' id='users_div'>
+            <span id='mobile_button' class='mobile_button'>
+                <i class='material-icons' onclick='chatroom.showMobileUsers();'>menu</i>
+            </span>
             <div id='users_div_container' class='users_div_container'></div>
         </div><!-- .users_div -->
+        
         <div class='message_div'>
             <div class='messageList_div' id='messageList_div'></div><!-- .messageList_div -->
         </div><!-- .message_div -->
@@ -21,7 +26,8 @@
     chatroom.getCurrentCookies();
     chatroom.displayUser();
     window.onbeforeunload = function(){
-        return "Are you sure you want to close the window?";
+        var check = confirm("Are You Sure You Want To Leave");
+        return check;
     }
     /*
     window.onbeforeload = function() {

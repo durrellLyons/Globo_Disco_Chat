@@ -7,40 +7,36 @@ header {
     
     h3 {
         color: $grey;
-        border-radius: 10px;
+        border-radius: 5px;
         text-align: center;
         float: left;
         margin: 5px auto;
-        
+        padding: 0.5em;
+        		        
         @media screen and (min-width: $query__small) {
             padding: 0 0.1em;
-            border: none;
+            width: 50%;
         }
         
         @media screen and (min-width: $query__medium) {
-            border: 2px groove;
+            padding: 0.5em;
         }
         
         @media screen and (min-width: $query__large) {
-            padding: 0;
-            min-width: 8em;
-            max-width: 8em;
-            cursor: pointer;
-            padding: 0;
-        }
-        span.blue {
-            margin: 0 5px;
-            display: inline;
-            font-weight: bolder;
+            padding: 1em 0.5em;
+            width: 20%;
         }
     }
     
     h4 {
         float: right;
+        text-align: center;
+        margin-right: 1em;
+        
         a {
             color: $grey;
-            margin-left: 1em;
             text-decoration: none;
+            width: 100%;
             &:hover {
                 text-decoration: underline;
             }
