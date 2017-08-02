@@ -3,8 +3,8 @@
     <div class='container'>
         
         <div class='users_div' id='users_div'>
-            <span id='mobile_button' class='mobile_button'>
-                <i class='material-icons' onclick='chatroom.showMobileUsers();'>menu</i>
+            <span id='mobile_button' class='mobile_button' onclick='chatroom.showMobileUsers();'>
+                <i class='material-icons' >menu</i>
             </span>
             <div id='users_div_container' class='users_div_container'></div>
         </div><!-- .users_div -->
@@ -29,10 +29,4 @@
         var check = confirm("Are You Sure You Want To Leave");
         return check;
     }
-    /*
-    window.onbeforeload = function() {
-        alert('text');
-        //chatroom.prototype.signOut(chatroom.currentUser);
-    }
-    */
 </script>

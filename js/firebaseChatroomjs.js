@@ -17,7 +17,7 @@ function chatroomObject() {
         var list = '<ul>';
         for( usersCounter=0; usersCounter < usersArray.length; usersCounter++) {
             list += '<li onclick=" chatroom.directChat(\''+usersArray[usersCounter]['user']+'\')">';
-            list+= usersArray[usersCounter]['user'];
+            list+= '<em>' + usersArray[usersCounter]['user'] + '</em>';
             if(usersArray[usersCounter]['loggedin']) {
                 list += '<i class="material-icons">visibility</i>';
             }
