@@ -33,8 +33,12 @@ function chatroomObject() {
         message += '@'+name+ ' ' +currentMessageText;
         document.getElementById('message').value = message;
         
-        /*** if selected on a mobile device, verify the mobile menu removes upon selection ***/
-        document.getElementById('users_div_container').style.display = 'none';
+        var screenWidth = screen.width;
+        
+        if(screenWidth < 1100) {
+            /*** if selected on a mobile device, verify the mobile menu removes upon selection ***/
+            document.getElementById('users_div_container').style.display = 'none';
+        }
     }
     
     this.chatroomMessages = function(messageArray) {
